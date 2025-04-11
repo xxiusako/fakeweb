@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>我的小小房間</title>
+    <style>
+        body {
+            background-color: #FFF8F0;
+            color: #333;
+            font-family: "微軟正黑體", "Arial", sans-serif;
+            background-image: url('https://i.imgur.com/kiBMQMb.png'); /* 淡淡背景花紋 */
+            background-repeat: repeat;
+            text-align: center;
+        }
+
+        .logo {
+            font-family: "Comic Sans MS", cursive;
+            font-size: 36px;
+            color: #FF6699;
+            margin-top: 30px;
+        }
+
+        .box {
+            border: 1px solid #FFCCCC;
+            padding: 30px;
+            margin: 30px auto;
+            width: 400px;
+            background-color: #FFFFFFDD;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+        }
+
+        a {
+            color: #FF6699;
+            text-decoration: none;
+            border-bottom: 1px dashed #FF99CC;
+        }
+
+        a:hover {
+            color: #FF3366;
+        }
+
+        .sticker {
+            margin: 10px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .profile {
+            text-align: left;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+
+        .button {
+            margin-top: 20px;
+            background-color: #FF99CC;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-family: "微軟正黑體";
+        }
+
+        .button:hover {
+            background-color: #FF6699;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="logo">♡ My Sweet Room ♡</div>
+
+    <div class="box" id="home">
+        <img src="https://i.imgur.com/LoA7Ycd.gif" class="sticker" alt="cat sticker">
+        <h1>歡迎來到我的小小房間</h1>
+        <p>這裡是愛貓派ฅ^•ﻌ•^ฅ的秘密基地</p>
+
+        <div class="profile">
+            <h3>About Me</h3>
+            <p>暱稱：某某</p>
+            <p>興趣：拍照 / 收藏貓咪小物 / 看日雜</p>
+            <p>近期狀態：在打造復古個人網站！</p>
+        </div>
+
+        <button class="button" onclick="showSecret()">進入秘密房間</button>
+
+        <h3>留言板</h3>
+        <p>♡ 歡迎留言聊聊天 ♡</p>
+        <p>（這裡是假留言板！）</p>
+    </div>
+
+    <div class="box hidden" id="secret">
+        <h1>貓咪照片區ฅ^•ﻌ•^ฅ</h1>
+        <img src="https://placekitten.com/400/300" alt="可愛貓咪">
+        <p><a href="#" onclick="backHome()">← 回首頁</a></p>
+    </div>
+
+    <script>
+        function showSecret() {
+            document.getElementById('home').classList.add('hidden');
+            document.getElementById('secret').classList.remove('hidden');
+        }
+        function backHome() {
+            document.getElementById('secret').classList.add('hidden');
+            document.getElementById('home').classList.remove('hidden');
+        }
+    </script>
+
+</body>
+</html>
